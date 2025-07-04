@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Byway Certificate</title>
+  <style>
+    /* Use web-safe fonts with fallbacks */
+    @import url('https://fonts.googleapis.com/css2?family=Georgia&display=swap');
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background: #fdfdfd;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .certificate-container {
+      width: 1000px;
+      max-width: 100%;
+      height: 700px;
+      margin: 50px auto;
+      padding: 50px;
+      border: 1px solid #111110;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+      position: relative;
+      background: #fff;
+      text-align: center;
+      box-sizing: border-box;
+    }
+    .certificate-title {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    .certificate-body {
+      font-size: 20px;
+    }
+    .recipient-name {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 10px 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .course-name {
+      font-style: italic;
+      font-size: 22px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .footer {
+      position: absolute;
+      bottom: 30px;
+      left: 50px;
+      right: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .signature img {
+      width: 120px;
+      max-width: 100%;
+      display: block;
+    }
+    /* Ensure PDF compatibility */
+    @media print {
+      .certificate-container {
+        box-shadow: none;
+        margin: 0;
+        width: 1000px;
+        height: 700px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="certificate-container">
+    <h1>Byway learn</h1>
+    <div class="certificate-title">Certificate of Completion</div>
+    <div class="certificate-body">
+      <p>This is to certify that</p>
+      <div class="recipient-name"><%- name ? name : 'Unknown' %></div>
+      <p>has successfully completed the course</p>
+      <div class="course-name">"<%- course ? course : 'Unknown Course' %>"</div>
+    </div>
+    <div class="footer">
+      <div class="signature">
+        <p>Instructor</p>
+        <img src="<%- signatureUrl ? 'https://tse1.mm.bing.net/th/id/OIP.lubaTym9SnppemWkXMYSqAHaFj?pid=Api&P=0&h=180' : 'https://tse1.mm.bing.net/th/id/OIP.lubaTym9SnppemWkXMYSqAHaFj?pid=Api&P=0&h=180' %>" alt="Signature" />
+      </div>
+    </div>
+  </div>
+</body>
+</html>
